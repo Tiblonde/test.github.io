@@ -1,76 +1,156 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>DailyLife</title>
-	<link rel="stylesheet" type="text/css" href="index.css">
-	<meta charset="UTF-8">
-    <meta name="viewport"
-      content="width=device-width, initial-scale=1">
-</head>
-<body>
+:root {
+ box-sizing: border-box;
+ font-size: calc(1.5vw + 0.6em);
+} 
+*::before,
+*::after {
+ box-sizing: inherit;
+} 
+body {
+ margin: 0;
+ font-family: Helvetica, Arial, sans-serif;
+} 
 
-<header class="gesture">
-	<h1>Welcome To My Site</h1>
-</header>
+a:link{
+	text-decoration: none;
+}
 
-<nav class="menu">
-	<button id="open" class="open">hamtag</button>
+.gesture{
+	text-align: center;
+}
+.gesture > h1{
+	color: #000000;
+	font-size: 1.5rem;
+}
 
-    <div class="modal" id="modal">
-    	<div class="modal-backdrop"></div>
-		<div class="modal-body">
-			<ul class="menu-content">
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Memes</a></li>
-				<li><a href="#">Knowledge</a></li>
-				<li><a href="#">Shares</a></li>
-			</ul>
-			<button id="close" class="close">close</button>
-		</div>
-    </div>
-</nav>
+.open{
+	position: absolute;
+	top: 0.3em;
+	left: 0; 
 
-<nav class="top-nav">
-	<ul class="horizon">
-		<li><a href="#">FORMER</a></li>
-		<li><a href="#">LATEST</a></li>
-		<li><a href="#">FAVORITE</a></li>
-	</ul>
-</nav>
+	border: 0;
+	background-color: transparent;
 
-<main>
-	<section class="latest-article">
-		<figure>
-			<div class="time">2021/10/3</div>
-			<img src="10.3/10.3 start.jpg">
-			<h2>Title</h2>
-			<div class="intro">introduce</div>			
-		</figure>
-	</section>
+	font-size: 3em;
+	width: 1em;
+	height: 1em;
+	line-height: 0.4;
+	text-indent: 5em;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.open::after {
+	position: absolute;
+	top: 0.2em;
+	left: 0.2em;
+	display: block;
+	content: "\2261";
+	text-indent: 0;
+	cursor: pointer;
+} 
 
-	<div class="article-grid">
-		<section class="former-article">
+.close{
+	position: absolute;
+	top: 0.2em;
+	right: 0.2em;
 
-		
-		</section>
-	</div>
-</main>
+	border: 0;
+	background-color: transparent;
 
-<script type="text/javascript">
-	var button = document.getElementById('open');
-	var close = document.getElementById('close');
-	var modal = document.getElementById('modal');
+	font-size: 3em;
+	width: 1em;
+	height: 1em;
+	line-height: 0.4;
+	text-indent: 5em;
+	white-space: nowrap;
+	overflow: hidden;	
+}
+.close::after {
+	position: absolute;
+	top: 0.2em;
+	left: 0.2em;
+	display: block;
+	content: "\00D7";
+	text-indent: 0;
+	cursor: pointer;
+} 
 
-	button.addEventListener('click', function (event) {
-	 event.preventDefault();
-	 modal.style.display = 'block';
-	});
+.modal{
+	display: none;
+}
+.modal-backdrop{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-body{
+	position: fixed;
+	top: 0;
+	right: 30%;
+	left: 0;
+	bottom: 0;
 
-	close.addEventListener('click', function (event) {
-	 event.preventDefault();
-	 modal.style.display = 'none';
-	});
-</script>
+	background-color: #ffffff;
+	overflow: auto;
+}
+.menu-content{
+	margin-left: 0;
+	padding-left: 1em;
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+}
+.menu-content li{
+    max-width: 80%;
+    font-size: 1.5em;
+    padding: 0.5em 0;
+    font-weight: 500;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+}
+.menu-content li a{
+	color: #000000;
+}
 
-</body>
-</html>
+.top-nav{
+	width:100vw;
+	background-color: #000000;
+	font-size: 0.8em;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+.top-nav .horizon{
+	list-style-type: none;
+	display: flex;
+	justify-content: space-around;
+}
+.horizon li{
+	padding: 15px 18px;
+}
+.horizon li a{
+	color: #ffffff;
+}
+
+.latest-article{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+.time{
+	text-align: center;
+}
+.latest-article img{
+    width: 100%;
+}
+.latest-article figure{
+	display: flex;
+	flex-direction: column;
+}
+.latest-article img{
+	flex: 1;
+	object-fit: cover;
+	max-height: 40%;
+}
