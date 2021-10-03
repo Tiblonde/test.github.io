@@ -18,9 +18,14 @@ a:link{
 .gesture{
 	text-align: center;
 }
+.gesture > h1{
+	color: #000000;
+	font-size: 1.5rem;
+}
+
 .open{
 	position: absolute;
-	top: 0.5em;
+	top: 0.3em;
 	left: 0.1em;
 
 	border: 0;
@@ -109,6 +114,7 @@ a:link{
 .menu-content li a{
 	color: #000000;
 }
+
 .top-nav{
 	width:100vw;
 	background-color: #000000;
