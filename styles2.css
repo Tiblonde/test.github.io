@@ -1,0 +1,181 @@
+:root{
+	box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	margin: 0;
+
+	background-image: repeating-linear-gradient(-45deg,
+					hsl(100, 100%, 0%), hsl(100, 100%, 0%) 25px,
+					hsla(100, 100%, 0%, 0.8) 25px, hsla(100, 100%, 0%, 0.8) 50px);
+}
+
+a:link {
+	font-weight: bold;
+	color: hsla(100, 100%, 100%, 1);
+	text-decoration: none;
+}
+a:visited {
+	color: hsla(100, 100%, 100%, 0.9);
+}
+a:hover {
+	color: hsla(100, 100%, 100%, 0.9);
+}	
+a:active {
+	color: hsla(100, 100%, 100%, 0.9);
+}
+
+.container {
+
+	height: 100vh;
+
+	max-width: 800px;
+	margin: 0 auto;
+
+}
+
+.header {
+	padding: 0;
+	margin: 0;
+
+	background-color: transparent;
+}
+.title {
+	
+	width: 100%;
+	padding: 0 1rem;
+	margin: 0;
+
+	color: white;
+	font-size: 1.5em;
+	background-color: transparent;
+}
+.slogan {
+	display: block;
+
+	width: 100%;
+	padding: 0 1rem;
+	margin: 0;
+
+	color: white;
+	font-size: 0.8em;
+	background-color: transparent;
+}
+
+.dropdown {
+	position: relative;
+}
+.dropdown__toggle {
+	position: absolute;
+	display: inline-block;
+
+	top: -3.1em;
+	right: 0.5em;
+
+	height: 3em;
+	width: 3em;
+	
+	border: 0;
+	padding: 0 auto 0 1rem; /*?*/
+	margin: 0;
+
+	
+	font-weight: bold;
+	color: white;
+	line-height: 3;
+	text-indent: 5em;
+
+	overflow: hidden;
+
+	background-color: transparent;
+}
+.dropdown__toggle::after {
+	display: block;
+	position: absolute;
+
+	top: -0.15em;
+
+	font-size: 3rem;
+	line-height: 1.2;
+	text-indent: 0;
+	content: "\2261";
+}
+
+.dropdown__drawer {
+	height: 0;
+	overflow: hidden;
+	transition: height 0.5s ease-out;
+}
+.menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.menu > li {
+	width: 100%;
+
+	color: white;
+
+	background-color: transparent;
+}
+.menu > li > a {
+	display: block;
+	width: 100%;
+	padding: 0.5em 1em;
+}
+.menu > li > a:hover {
+	background-color: hsla(100, 100%, 0%, 0.5);
+}
+.dropdown.is-open .dropdown__drawer {
+	height: auto;
+}
+
+.main-container {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+
+	background-color: hsla(100, 100%, 100%, 1);
+	border-radius: 0.5em; 
+}
+
+.media {
+
+
+	flex: 1 1 300px;
+	max-width: 800px;
+
+}
+.media::after {
+
+	display: block;
+	content: " ";
+	clear: both;
+}
+.media__image {
+	float: left;
+
+	height: 140px;
+	width: 100px;
+
+	margin: 1em;
+}
+.media__body {
+	overflow: auto;
+}
+
+.footer {
+
+	color: white;
+	font-weight: bold;
+
+	text-align: center;
+
+	padding: 0.5em;
+	background-color: transparent;
+}

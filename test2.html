@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles2.css">
+	<title></title>
+</head>
+<body>
+	<div class="container">
+		<header class="header">
+			<h4 class="title">Title</h4>
+			<span class="slogan">slogan</span>
+		</header>
+
+		<nav class="dropdown" id="drawer__menu">
+			<button class="dropdown__toggle" id="toggle">toggle</button>
+			<div class="dropdown__drawer">
+				<ul class="menu">
+					<li><a href="">Home</a></li>
+					<li><a href="">Not Home</a></li>
+				</ul>
+			</div>		
+		</nav>
+
+		<main class="main-container">
+			<div class="media">
+				<img src="" class="media__image">
+				<div class="media__body">
+					<h4>Monday</h4>
+					<p>Eat an apple</p>
+				</div>
+			</div>
+			<div class="media">
+				<img src="" class="media__image">
+				<div class="media__body">
+					<h4>Tuesday</h4>
+					<p>Drink a cup of tea</p>
+				</div>
+			</div>
+			<div class="media">
+				<img src="" class="media__image">
+				<div class="media__body">
+					<h4>Wednesday</h4>
+					<p>Play with ghost</p>
+				</div>
+			</div>
+			<div class="media">
+				<img src="" class="media__image">
+				<div class="media__body">
+					<h4>Thursday</h4>
+					<p>Image the future</p>
+				</div>
+			</div>
+			<div class="media">
+				<img src="" class="media__image">
+				<div class="media__body">
+					<h4>Friday</h4>
+					<p>Stay healthy</p>
+				</div>
+			</div>
+			<div class="media">
+				<img src="" class="media__image">
+				<div class="media__body">
+					<h4>Saturday</h4>
+					<p>Be social-afraid</p>
+				</div>
+			</div>
+		</main>
+
+		<footer class="footer">
+				&copy;2024 &mdash;
+				<a href="">site.com</a>
+		</footer>
+
+	</div>
+
+</body>
+<script type="text/javascript">
+	(function() {
+		var toggle = document.getElementsByClassName('dropdown__toggle')[0];
+		var dropdown = toggle.parentElement;
+		var drawer = document.getElementsByClassName('dropdown__drawer')[0];
+		var height = drawer.scrollHeight;
+
+		toggle.addEventListener('click', function(e) {
+			e.preventDefault();
+			dropdown.classList.toggle('is-open');
+			if (dropdown.classList.contains('is-open')) {
+				drawer.style.setProperty('height', height + 'px');
+			} else {
+				drawer.style.setProperty('height', '0');
+			}
+		});
+
+	})();
+</script>
+</html>
